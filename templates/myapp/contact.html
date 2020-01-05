@@ -1,0 +1,45 @@
+{% extends 'myapp/base.html' %}
+<html>
+{% load staticfiles %}
+<head>
+    <meta charset="UTF-8">
+    <title>contact Page</title>
+</head>
+<body>
+{% block content %}
+<meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+<style>
+    body{
+
+    background-color:lightblue;
+    }
+    table
+    {
+    font-size:20px;
+    }
+</style>
+<div class="container">
+    <div class="row">
+        <div class="col-md-4">
+            <form method="POST">
+                {% csrf_token %}
+                <h5>Please contact Your Details</h5>
+                {{cform}}<br/><br/>
+                <center>
+                    <input type="submit" value="Submit" class="btn btn-success">
+                    <input type="reset" value="Clear" class="btn btn-danger">
+                </center>
+            </form>
+        </div>
+        <div class="col-md-6">
+            <img src="{% static 'images/cs.jpg' %}" width="250" height="250">
+        </div>
+    </div>
+</div>
+{% endblock %}
+</body>
+</html>

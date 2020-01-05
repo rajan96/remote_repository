@@ -1,0 +1,51 @@
+{% extends 'myapp/base.html' %}
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>feedback Page</title>
+</head>
+<body>
+{% block content %}
+ <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+<style>
+    body{
+    background-color:pink;
+    font-size:20px;
+    }
+</style>
+
+<div class="container">
+    <div class="row">
+        <div class="offset-md-4 col-md-6">
+            <center><h3>Avaliable FeedBack Are...</h3></center>
+            {% if data %}
+            {% for i in data %}
+            {% if i.rating > 5 and i.rating <= 10 %}
+            <b> Name: {{i.name}} </b><br/>
+               Rating: {{i.rating}} <br/>
+               Date: {{i.date}} <br/>
+               FeedBack:{{i.feedback}}<br/><br/>
+            {% endif %}
+            {% endfor %}
+            {% else %}
+            <h2>Feedbacks are not available</h2>
+            {% endif %}
+            <center><h3>Please Enter Your FeedBack...</h3></center>
+            <form method="POST">
+                {% csrf_token %}
+                {{ fform.as_p }}
+                <br/><br/>
+                <center>
+                <input type="submit" value="Submit" class="btn btn-success">
+                <input type="reset" value="Clear" class="btn btn-danger">
+                </center>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}
+</body>

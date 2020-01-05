@@ -1,0 +1,56 @@
+{% extends 'myapp/base.html' %}
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>services Page</title>
+</head>
+<body>
+{% block content %}
+<meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+<style>
+    body{
+    background-color:pink;
+    }
+    table
+    {
+    font-size:20px;
+    }
+
+</style>
+{% if courses %}
+<center>
+    <table class="table table-hover table-bordered text-center text-dark">
+        <thead>
+            <tr class="bg-success text-white">
+                <th>Courses ID</th>
+                <th>Courses Name</th>
+                <th>Trainer Name</th>
+                <th>Start Date</th>
+                <th>Start Time</th>
+                <th>Experience</th>
+            </tr>
+        </thead>
+        {% for i in courses %}
+            <tbody>
+                <tr>
+                    <td>{{i.course_no}}</td>
+                    <td>{{i.course_name}}</td>
+                    <td>{{i.trainer_name}}</td>
+                    <td>{{i.start_date}}</td>
+                    <td>{{i.start_time}}</td>
+                    <td>{{i.trainer_exp}}</td>
+                </tr>
+            </tbody>
+        {% endfor %}
+    </table>
+</center>
+{% else %}
+<h1>Courses Are Not Available</h1>
+{% endif %}
+{% endblock %}
+</body>
+</html>

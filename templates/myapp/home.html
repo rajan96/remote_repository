@@ -1,0 +1,54 @@
+{% extends 'myapp/base.html' %}
+<html xmlns="http://www.w3.org/1999/html">
+{% load staticfiles %}
+<head>
+    <meta charset="UTF-8">
+    <title>Home Page</title>
+</head>
+<body>
+{% block content %}
+ <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+<style>
+    body{
+    background-color:pink;
+    }
+    marquee{
+    margin-top:30px;
+    }
+    #h11{
+    font-size:100px;
+    font-family:"Times New Roman";
+</style>
+<div class="container-fluid">
+    <div class="row">
+            <h1>About Founder</h1>
+            <h3>&emsp;&emsp;&emsp;&emsp;The Founder of Durgasoft is all django students<br/>
+                &emsp;&emsp;&emsp;&emsp; All founders has phd in python.<br/>
+                &emsp;&emsp;&emsp;&emsp;All student learned from Ameerpet.
+            </h3>
+            <h1>About Institute</h1>
+            <h3>&emsp;&emsp;&emsp;&emsp;Durgasoft was found in 1980 year.<br/>
+                &emsp;&emsp;&emsp;&emsp;we provide all pacilities like Ac class Room.<br/>
+                &emsp;&emsp;&emsp;&emsp;100% job guarante otherwise refund money.
+            </h3>
+            <h1>Achievements:</h1>
+            <h3>&emsp;&emsp;&emsp;&emsp;All students get job before batch ending only..!!<br/>
+            &emsp;&emsp;&emsp;&emsp;we trained more then 10 lakhs students is python<br/>
+            &emsp;&emsp;&emsp;&emsp; we got best institute award by PM.
+            </h3>
+            <div class="col-md-6">
+                <br/><br/><br/>
+                <img src="{% static 'images/AI.jpg' %}" width="350" height="350">
+            </div>
+            <div class="row">
+                 <marquee><h1 id ="h11">Admins Are Opened</h1></marquee>
+            </div>
+    </div>
+</div>
+{% endblock %}
+</body>
+</html>

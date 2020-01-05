@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load staticfiles %}
+<head>
+    <meta charset="UTF-8">
+    <title>Login form</title>
+ <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+<style>
+    body{
+    background-color:pink;
+    }
+</style>
+<br/><br/>
+<center>
+<h3>welcome to Login Page..!! </h3>
+</center>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <br/><br/><br/>
+                <img src="{% static 'images/AI.jpg' %}" width="450" height="300">
+            </div>
+                <div class="col-md-6">
+                    <br/><br/><br/>
+                    <form method="POST">
+                        {% csrf_token %}
+                        <h5>Please Login Here...</h5>
+                        {{ABCD}}<br/><br/>
+                        <center>
+                        <input type="submit" value="Submit" class="btn btn-success">
+                        <input type="reset" value="Clear" class="btn btn-danger">
+                        <br/><br/>
+                        <a href="/reg/">Create New Account Here</a>
+                        </center>
+                    </form>
+                </div>
+        </div>
+    </div>
+</body>
+</html>
